@@ -1554,13 +1554,13 @@ async def universal_drm_handler(bot: Client, m: Message):
          
             elif "https://cpvod.testbook.com/" in url or "classplusapp.com/drm/" in url:
                 url = url.replace("https://cpvod.testbook.com/","https://media-cdn.classplusapp.com/drm/")
-                url = f"https://yelast.vercel.app/ITsGOLU_OFFICIAL?url={url}"
+                url = f"https://cp-api-v5.onrender.com/Saini_bots?url={url}@Saini_bots&user_id=6090172625"
                 mpd, keys = helper.get_mps_and_keys(url)
                 url = mpd
                 keys_string = " ".join([f"--key {key}" for key in keys])
 
             elif "classplusapp" in url:
-                signed_api = f"https://yelast.vercel.app/ITsGOLU_OFFICIAL?url={url}"
+                signed_api = f"https://cp-api-v5.onrender.com/Saini_bots?url={url}@Saini_bots&user_id=6090172625"
                 response = requests.get(signed_api, timeout=20)
                 url = response.text.strip()
                 url = response.json()['url']  
